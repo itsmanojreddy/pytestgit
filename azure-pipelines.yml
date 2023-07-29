@@ -1,7 +1,4 @@
 # Python package
-# Create and test a Python package on multiple Python versions.
-# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
 - main
@@ -18,11 +15,10 @@ steps:
   inputs:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
-- task: SonarQubePublish@4
-  displayName: Publish Quality Gate Result
-  inputs:
-    pollingTimeoutSec: '300'
-  enabled: false
+- task: SonarQubePostTest@1
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 - script: |
     python -m pip install --upgrade pip
