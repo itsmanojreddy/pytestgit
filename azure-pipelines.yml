@@ -24,4 +24,6 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 - script: |
+      cd pytestgit
+      cd tests
       python -m pytest
