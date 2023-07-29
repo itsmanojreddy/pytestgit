@@ -1,1 +1,2 @@
+pytest==7.4.0
 pytest-azurepipelines==1.0.4
