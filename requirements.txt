@@ -1,1 +1,1 @@
-pip install pytest-azurepipelines
+pytest-azurepipelines==1.0.4
