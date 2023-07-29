@@ -19,9 +19,16 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
+- task: SonarQubePublish@4
+  displayName: Publish Quality Gate Result
+  inputs:
+    pollingTimeoutSec: '300'
+  enabled: false
+
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
+  
 - script: |
       python -m pytest
